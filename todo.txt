@@ -1,0 +1,42 @@
+web-programming-1-homework/
+├── index.html
+├── javascript.html
+├── react.html
+├── spa.html
+├── fetchapi.html
+├── axios.html
+├── oojs.html
+│
+├── assets/
+│   ├── css/
+│   │   └── styles.css              ← Global styles (all pages)
+│   ├── data/
+│   │   ├── pizza.txt               ← File-based CRUD source
+│   │   └── category.txt            ← Dropdown / reference (optional)
+│   ├── js/
+│   │   ├── pizza-crud.js           ← Vanilla JS CRUD logic (javascript.html)
+│   │   ├── fetch-pizza-crud.js     ← Fetch CRUD UI (fetchapi.html)
+│   │   └── oojs-app.js             ← OOJS app (oojs.html)
+│   └── img/                        ← Screenshots / icons (optional)
+│
+├── api/                             ← Server-side (PHP + MySQL) — partner zone
+│   ├── db.php                       ← PDO connection (host, db, user, pass)
+│   ├── pizza-api.php                ← REST: GET list, POST, PUT, DELETE (names vary)
+│   └── (optional) seed.sql          ← SQL to create table + import pizza rows
+│
+├── react/                           ← Assignment: two SPA apps’ src + dist
+│   ├── app-calculator/              ← Example name — your real folder names OK
+│   │   ├── src/
+│   │   └── dist/
+│   └── app-tictactoe/               ← Second mini-app
+│       ├── src/
+│       └── dist/
+│   └── (optional) react-crud/       ← If you build react.html / axios.html as bundles
+│       ├── src/
+│       └── dist/
+│
+├── docs/                            ← Not submitted as repo-only; for building PDF
+│   └── screenshots/                 ← PNGs for the 15+ page PDF
+│
+├── .gitignore                       ← Ignore node_modules, local env, OS junk
+└── README.md                        ← Optional; PDF is what teacher grades — OK if empty/minimal

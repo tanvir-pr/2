@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React CRUD — Web Programming Homework</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1>Web programming-1 Lecture Homework</h1>
+      <p class="tagline">React CRUD (course method A)</p>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="wrap nav-inner">
+      <a href="index.html">Home</a>
+      <a href="javascript.html">JavaScript CRUD</a>
+      <a href="react.html" aria-current="page">React CRUD</a>
+      <a href="spa.html">SPA</a>
+      <a href="fetchapi.html">Fetch API CRUD</a>
+      <a href="axios.html">Axios CRUD</a>
+      <a href="oojs.html">OOJS</a>
+    </div>
+  </nav>
+
+  <main class="wrap main-area">
+    <h2 class="page-title">React CRUD</h2>
+    <p class="lead">
+      Full CRUD on the same <code>pizza.txt</code> / <code>category.txt</code> data.
+      React is loaded from official UMD builds; UI is built with <code>React.createElement</code> only (no Babel in the browser).
+      If your course requires a local npm build instead, you can replace this with your bundled output.
+    </p>
+    <div id="react-crud-root"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><strong>Creators</strong></p>
+      <p><span class="neptun">Your Name</span> — Neptun: <span class="neptun">YOURCODE</span></p>
+      <p><span class="neptun">Partner Name</span> — Neptun: <span class="neptun">PARTNERCODE</span></p>
+    </div>
+  </footer>
+
+  <!-- React 18 UMD (development). Switch to *.production.min.js for deployment if you prefer. -->
+  <script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
+  <script src="assets/js/react-pizza-crud.js"></script>
+</body>
+</html>

@@ -1,0 +1,492 @@
+/* Web programming-1 homework — shared layout */
+:root {
+  --bg: #1a1512;
+  --surface: #2d2620;
+  --surface2: #3d342b;
+  --text: #f5ebe0;
+  --muted: #c4b8a8;
+  --accent: #e85d04;
+  --accent2: #dc2f02;
+  --ok: #2a9d8f;
+  --danger: #e63946;
+  --radius: 10px;
+  --font: system-ui, "Segoe UI", Roboto, Ubuntu, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.wrap {
+  width: min(1100px, 92vw);
+  margin-inline: auto;
+}
+
+.site-header {
+  background: linear-gradient(135deg, var(--surface2) 0%, var(--surface) 100%);
+  border-bottom: 3px solid var(--accent);
+  padding: 1.75rem 0 1.25rem;
+}
+
+.site-header h1 {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.35rem, 4vw, 1.85rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.site-nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--surface2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  padding: 0.65rem 0;
+}
+
+.site-nav a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background 0.15s, color 0.15s;
+}
+
+.site-nav a:hover {
+  background: var(--surface2);
+  color: #fff;
+}
+
+.site-nav a[aria-current="page"] {
+  background: var(--accent);
+  color: #fff;
+}
+
+.main-area {
+  padding: 2rem 0 3rem;
+  min-height: 46vh;
+}
+
+.page-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.lead {
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+  max-width: 62ch;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  border: 1px solid var(--surface2);
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--accent2);
+}
+
+.placeholder-box {
+  background: var(--surface);
+  border: 1px dashed var(--muted);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  color: var(--muted);
+}
+
+.site-footer {
+  background: var(--surface);
+  border-top: 1px solid var(--surface2);
+  padding: 1.5rem 0 2rem;
+  margin-top: auto;
+}
+
+.site-footer p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+.site-footer .neptun {
+  font-family: ui-monospace, monospace;
+  color: var(--accent);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+code {
+  font-size: 0.88em;
+  background: var(--surface2);
+  padding: 0.12em 0.45em;
+  border-radius: 6px;
+}
+
+/* JavaScript CRUD page */
+.crud-status {
+  min-height: 1.5rem;
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.crud-status--error {
+  color: var(--danger);
+}
+
+.crud-panel {
+  background: var(--surface);
+  border: 1px solid var(--surface2);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+  margin-bottom: 1.25rem;
+}
+
+.crud-subtitle {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+}
+
+.crud-meta {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.crud-form {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 560px) {
+  .crud-form {
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+  }
+
+  .crud-form .field-check,
+  .crud-form .field-actions {
+    grid-column: 1 / -1;
+  }
+
+  .crud-form .field-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+.field label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.field input[type="text"],
+.field select {
+  width: 100%;
+  max-width: 320px;
+  padding: 0.5rem 0.65rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--surface2);
+  background: var(--bg);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.field-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.field-check label {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.btn-secondary {
+  background: var(--surface2);
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  background: #4a4036;
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+.btn-danger:hover {
+  filter: brightness(1.08);
+}
+
+.btn-sm {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.8rem;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.crud-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.crud-table th,
+.crud-table td {
+  text-align: left;
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--surface2);
+}
+
+.crud-table th {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.crud-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.react-crud-app .field input[type="text"],
+.react-crud-app .field select {
+  max-width: none;
+}
+
+.react-crud-app #react-pname {
+  width: 100%;
+  max-width: 320px;
+}
+
+/* SPA + mini-apps */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.spa-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.spa-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.spa-tab {
+  background: var(--surface2);
+  color: var(--text);
+}
+
+.spa-tab:hover {
+  filter: brightness(1.12);
+}
+
+.spa-tab--active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.spa-panel {
+  background: var(--surface);
+  border: 1px solid var(--surface2);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  min-height: 12rem;
+}
+
+/* Calculator */
+.calc-app {
+  max-width: 280px;
+}
+
+.calc-display {
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-size: 1.75rem;
+  text-align: right;
+  padding: 0.65rem 0.75rem;
+  margin-bottom: 0.65rem;
+  background: var(--bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--surface2);
+  min-height: 2.75rem;
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.calc-btn {
+  min-height: 2.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--surface2);
+  background: var(--surface2);
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.calc-btn:hover {
+  filter: brightness(1.1);
+}
+
+.calc-btn--op {
+  background: #4a4036;
+}
+
+.calc-btn--equals {
+  background: var(--ok);
+  border-color: transparent;
+  color: #fff;
+}
+
+.calc-btn--ac {
+  grid-column: 1 / -1;
+  background: var(--danger);
+  border-color: transparent;
+  color: #fff;
+}
+
+.calc-btn--zero {
+  grid-column: span 1;
+}
+
+/* Tic-tac-toe */
+.ttt-app {
+  max-width: 320px;
+}
+
+.ttt-status {
+  margin: 0 0 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 5.5rem);
+  grid-template-rows: repeat(3, 5.5rem);
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 400px) {
+  .ttt-board {
+    grid-template-columns: repeat(3, minmax(0, 28vw));
+    grid-template-rows: repeat(3, minmax(0, 28vw));
+  }
+}
+
+.ttt-cell {
+  font-size: 1.75rem;
+  font-weight: 700;
+  border-radius: var(--radius);
+  border: 1px solid var(--surface2);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.ttt-cell:hover {
+  border-color: var(--accent);
+}
+
+.ttt-reset {
+  margin-top: 0.25rem;
+}
