@@ -1,6 +1,0 @@
-id	wtype	description
-1	pla	Plastic waste: PET bottle, cosmetic flasks (PP+HDPE), bags.
-2	gla	Glass waste: coloured and white glass.
-3	green	Green waste: compostable garden waste.
-4	pap	Paper waste: newspapers, books, cardboard boxes.
-5	com	Communal waste: solid, residential, non-degradable, non-hazardous waste.
